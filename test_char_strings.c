@@ -49,4 +49,6 @@ int main(void)
 	alen = _printf("Actual  : %c%%%c%%%%%s%c%s%s\n", INT_MAX, INT_MIN, "hello", 0, "holberton", 0);
 	printf("Expected: %d\n", elen);
 	printf("Actual  : %d\n", alen);
+	printf("Expected  %i %d\n", 0032, 0032);
+        _printf("Actual %i %d \n", 0032, 0032);
 }
