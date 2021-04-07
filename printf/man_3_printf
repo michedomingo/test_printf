@@ -1,0 +1,27 @@
+.TH man 3 "15 March 2020" "0.10" "Printf man page"
+.SH NAME
+_printf - print a string of different types using formatting rules
+.SH SYNOPSIS
+.B #include <unistd.h>
+.B #include <stdarg.h>
+Prints a formatted string to the standard output using a string with format specifiers
+.SH DESCRIPTION
+.PP
+This _printf function can format a string to interpolate all of Characters(specifier: %c), Strings(specifier: %s),
+and Integers(specifiers: %d OR %i), as well as encode Strings to ROT13(specifier: %R) and reverse strings(specifier %r).
+For Integers, you are able to convert any unsigned int(specifier: %u) to its Hexadecimal(specifiers: %x for lowercase, %X for uppercase) value or its octal(%o) value.
+.B To use a specifier please do so in this format: _printf("%s", string); -- where the format string specifies the order and operation of the arguments and how they should be outputted.
+.I _printf can take any number of arguments.
+.SH RETURN
+This function returns how many characters are printed to the standard output with each call.
+.SH FURTHER EXAMPLES
+To print the someones name and age in a string:
+.B printf("Hello %s, you are %d years old", name, age);
+.I Note the respective placement of the specifiers and arguments. We can expect name to be a string and age to be an integer.
+.SH SEE ALSO:
+printf(3)
+.SH BUGS
+This printf does not currently handle Octal and Hexadecimal conversions well, the output seems fine. The character and string specifiers do not return correct length.
+.SH AUTHORS
+Michelle Domingo,
+Derric Donehoo. Special thanks to Holberton and Cohort 11.
